@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Factorial Calculator</h1>
+<input type="number" id="numberInput" placeholder="Enter a number">
+<button onclick="calculateFactorial()">Calculate Factorial</button>
+<p id="result"></p>
+
+<script>
+    function calculateFactorial() {
+        const input = document.getElementById('numberInput').value;
+        const result = document.getElementById('result');
+
+        if (input < 1) {
+            if (input === '0') {
+                result.textContent = 'Answer: 1';
+                return;
+            }
+            result.textContent = 'Answer: Unspecified';
+            return;
+        }
+
+        let factorial = 1;
+        for (let i = 1; i <= input; i++) {
+            factorial *= i;
+        }
+
+        result.textContent = `Answer: ${factorial}`;
+    }
+</script>
+
+</body>
+</html>
